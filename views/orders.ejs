@@ -1,0 +1,25 @@
+<div class="header-section">
+  <h2>📦 הזמנות</h2>
+  <p><%= orders.length %> הזמנות סה"כ</p>
+</div>
+
+<div class="card">
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>הזמנה</th><th>לקוח</th><th>פריטים</th><th>סה"כ</th><th>סטטוס</th><th>תאריך</th></tr></thead>
+      <tbody>
+        <% orders.forEach(o => { %>
+        <tr>
+          <td><a href="/api/orders/<%= o.id %>"><%= o.id.slice(0,8) %>...</a></td>
+          <td><%= o.customer?.name || o.customer_phone %></td>
+          <td style="font-size:13px"><%= o.items.map(i => `${i.name} x${i.quantity}`).join(', ') %></td>
+          <td>₪<%= o.total.toFixed(2) %></td>
+          <td><span class="badge badge-<%= o.status %>"><%= {pending:'ממתינה',confirmed:'אושרה',preparing:'בהכנה',out_for_delivery:'בדרך',delivered:'נמסרה',cancelled:'בוטלה'}[o.status] || o.status %></span></td>
+          <td><%= new Date(o.created_at).toLocaleDateString('he-IL') %></td>
+        </tr>
+        <% }) %>
+        <% if (orders.length === 0) { %><tr><td colspan="6" style="text-align:center;color:var(--text-muted);padding:40px">אין הזמנות</td></tr><% } %>
+      </tbody>
+    </table>
+  </div>
+</div>

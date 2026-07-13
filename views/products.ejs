@@ -1,0 +1,23 @@
+<div class="header-section">
+  <h2>🏷️ מוצרים</h2>
+  <p><%= products.length %> מוצרים בקטלוג</p>
+</div>
+
+<div class="card">
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>שם</th><th>קטגוריה</th><th>מחיר</th><th>מלאי</th><th>סטטוס</th></tr></thead>
+      <tbody>
+        <% products.forEach(p => { %>
+        <tr>
+          <td><strong><%= p.name %></strong></td>
+          <td><%= p.category %></td>
+          <td>₪<%= p.price.toFixed(2) %></td>
+          <td><%= p.stock %></td>
+          <td><span class="badge <%= p.active ? 'badge-delivered' : 'badge-cancelled' %>"><%= p.active ? 'פעיל' : 'לא פעיל' %></span></td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</div>

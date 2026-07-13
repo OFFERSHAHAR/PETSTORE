@@ -1,0 +1,23 @@
+<div class="header-section">
+  <h2>👥 לקוחות</h2>
+  <p><%= customers.length %> לקוחות רשומים</p>
+</div>
+
+<div class="card">
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>שם</th><th>טלפון</th><th>כתובת</th><th>תאריך הצטרפות</th></tr></thead>
+      <tbody>
+        <% customers.forEach(c => { %>
+        <tr>
+          <td><strong><%= c.name %></strong></td>
+          <td dir="ltr"><%= c.phone %></td>
+          <td><%= c.address || '—' %></td>
+          <td><%= new Date(c.created_at).toLocaleDateString('he-IL') %></td>
+        </tr>
+        <% }) %>
+        <% if (customers.length === 0) { %><tr><td colspan="4" style="text-align:center;color:var(--text-muted);padding:40px">אין לקוחות</td></tr><% } %>
+      </tbody>
+    </table>
+  </div>
+</div>

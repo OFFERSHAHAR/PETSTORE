@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Agent Hub Guru · סוכן AI לשירות והזמנות — רשת עולם החי</title>
+<style>
+  :root{--ink:#1a2233;--muted:#65718a;--line:#e7ebf3;--blue:#3a72ff;--blue-d:#2657db;--pink:#e6197f;--bg1:#f7f9fd;--bg2:#eef2fa;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Segoe UI",Arial,sans-serif;color:var(--ink);line-height:1.65;
+       background:radial-gradient(1200px 520px at 50% -100px,#fff,transparent),linear-gradient(180deg,var(--bg1),var(--bg2));min-height:100vh}
+  .container{max-width:860px;margin:0 auto;padding:0 22px}
+  .hero{text-align:center;padding:52px 0 12px}
+  .wordmark{font-size:44px;font-weight:800;letter-spacing:.5px;line-height:1;display:inline-block;
+    background:linear-gradient(180deg,#3f4d6b,#8ea3c8 55%,#54628420);-webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;color:transparent}
+  .wordmark span{display:block;font-size:11px;letter-spacing:6px;color:#93a0b8;-webkit-text-fill-color:#93a0b8;font-weight:700;margin-top:12px}
+  .hero h1{font-size:28px;margin:24px 12px 8px;font-weight:800;letter-spacing:-.3px}
+  .hero .sub{font-size:16px;color:var(--muted);margin:0 12px;max-width:660px;margin-inline:auto}
+  .hero .sub b{color:var(--ink)}
+  .chip{display:inline-flex;align-items:center;gap:8px;margin-top:20px;background:#fff;border:1px solid var(--line);border-radius:100px;
+        padding:8px 18px;font-size:13px;color:var(--blue-d);font-weight:700;box-shadow:0 6px 18px rgba(50,80,160,.07)}
+  .chip svg{width:15px;height:15px}
+  .section{padding:34px 0}
+  .section h2{font-size:22px;margin:0 0 4px;letter-spacing:-.3px}
+  .section .lead{color:var(--muted);margin:0 0 24px;font-size:15px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:640px){.grid{grid-template-columns:1fr}}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 8px 26px rgba(40,70,140,.05);transition:.18s}
+  .card:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(40,70,140,.1)}
+  .ico{width:44px;height:44px;border-radius:12px;background:linear-gradient(160deg,#eef3ff,#dfe8ff);
+       display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+  .ico svg{width:23px;height:23px;stroke:var(--blue-d);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+  .card h3{margin:0 0 4px;font-size:16.5px}
+  .card p{margin:0;color:var(--muted);font-size:14px}
+  .demo{background:linear-gradient(160deg,#fff,#eef3ff);border:1px solid #dbe4fb;border-radius:22px;padding:32px 24px;text-align:center;box-shadow:0 18px 44px rgba(50,90,190,.1)}
+  .demo h2{margin:0 0 4px}
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:20px 0 6px}
+  .btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;font-size:15.5px;padding:15px 26px;border-radius:14px;transition:.15s}
+  .btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .btn-pink{background:var(--pink);color:#fff;box-shadow:0 8px 22px rgba(230,25,127,.28)}
+  .btn-pink:hover{background:#c9146d}
+  .btn-blue{background:var(--blue);color:#fff;box-shadow:0 8px 22px rgba(58,114,255,.3)}
+  .btn-blue:hover{background:var(--blue-d)}
+  .hint{font-size:12.5px;color:var(--muted);margin-top:14px}
+  .roadmap{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:640px){.roadmap{grid-template-columns:1fr}}
+  .roadmap li{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px 16px;display:flex;gap:13px;align-items:flex-start;box-shadow:0 6px 18px rgba(40,70,140,.05)}
+  .roadmap b{display:block;font-size:14.5px}
+  .roadmap span{color:var(--muted);font-size:13px}
+  .roadmap .plus{color:var(--blue-d);min-width:22px;height:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .roadmap .plus svg{width:20px;height:20px;stroke:var(--blue-d);fill:none;stroke-width:1.8;stroke-linecap:round}
+  .contact{background:#fff;border:1px solid var(--line);border-radius:22px;padding:32px 24px;text-align:center;box-shadow:0 18px 44px rgba(40,70,140,.08)}
+  .contact h2{margin:0 0 6px}
+  .contact p{color:var(--muted);margin:0 0 20px;font-size:15px}
+  .lines{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+  .pill{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;color:var(--ink);background:#f4f7fd;border:1px solid var(--line);padding:13px 22px;border-radius:14px}
+  .pill:hover{border-color:var(--blue);color:var(--blue-d)}
+  .pill svg{width:18px;height:18px;stroke:var(--blue-d);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+  .divider{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:8px 0}
+  footer{text-align:center;color:var(--muted);font-size:12.5px;padding:28px 0 46px}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="hero">
+    <div class="wordmark">Agent Hub Guru<span>AI ENGINEERING &nbsp;·&nbsp; RUN BY O&amp;O</span></div>
+    <h1>סוכן AI חכם לשירות לקוחות והזמנות</h1>
+    <p class="sub">הדגמה חיה שנבנתה במיוחד עבור <b>רשת עולם החי</b> — סוכן שמדבר עם הלקוחות שלכם מסביב לשעון, יודע מה במלאי ובאיזה מחיר, ומעביר הזמנות מסודרות ישירות אליכם.</p>
+    <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.2 5.8L20 9l-4.5 3.6L17 19l-5-3.4L7 19l1.5-6.4L4 9l5.8-.2z"/></svg> הדגמה חיה · לחצו ונסו בעצמכם</span>
+  </div>
+
+  <div class="section">
+    <h2>מה המערכת עושה</h2>
+    <p class="lead">מענה מיידי לכל פנייה, ולכידה מסודרת של כל הזמנה — בלי להעסיק אף אחד בטלפון.</p>
+    <div class="grid">
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></div><h3>מענה מיידי 24/7</h3><p>עונה ללקוחות בעברית, בכל שעה, בטון של החנות שלכם.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 11.5l7.2-7.2a2 2 0 0 1 1.4-.6H19a1 1 0 0 1 1 1v6.9a2 2 0 0 1-.6 1.4L12.2 20a1.5 1.5 0 0 1-2.1 0L4 13.6a1.5 1.5 0 0 1 0-2.1z"/><circle cx="15.5" cy="8.5" r="1.3"/></svg></div><h3>מחיר ומלאי חיים</h3><p>נשלף ישירות מהאתר שלכם — מחיר וזמינות מדויקים, תמיד מעודכן.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 8l8-4 8 4v8l-8 4-8-4z"/><path d="M4 8l8 4 8-4M12 12v8"/></svg></div><h3>יצירת הזמנה מסודרת</h3><p>בסוף השיחה נוצר כרטיס עם שם, טלפון, כתובת ופריטים — מוכן לטיפול.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3.5 7.5L12 13l8.5-5.5"/></svg></div><h3>עדכון אוטומטי ללקוח</h3><p>ברגע שההזמנה מוכנה — הלקוח מקבל: "ההזמנה מוכנה ותישלח בקרוב".</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.4"/><path d="M5 19.5c1.6-3.2 4.2-4.3 7-4.3s5.4 1.1 7 4.3"/></svg></div><h3>העברה לנציג אנושי</h3><p>מקרה מיוחד? אוסף פרטים ומעביר אליכם בקשה לחזרה טלפונית.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg></div><h3>לוח ניהול פרטי</h3><p>עמוד נפרד שבו כל ההזמנות והבקשות נאספות במקום אחד.</p></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="demo">
+      <h2>התנסות חיה — נסו עכשיו</h2>
+      <p class="lead" style="margin-bottom:0">שני הקישורים עובדים. פתחו, שאלו על מוצר, ובצעו הזמנה לדוגמה.</p>
+      <div class="cta-row">
+        <a class="btn btn-pink" href="https://olam-hachai-demo.onrender.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-4 4V5z"/></svg> צ'אט הלקוח — להתנסות</a>
+        <a class="btn btn-blue" href="https://olam-hachai-demo.onrender.com/admin" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg> לוח הניהול של בעל העסק</a>
+      </div>
+      <div class="hint">טיפ: פתחו את צ'אט הלקוח בטלפון ואת לוח הניהול במחשב — ותראו הזמנה נכנסת בזמן אמת.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>מה עוד אפשר להוסיף</h2>
+    <p class="lead">ההדגמה היא רק ההתחלה — הנה כיוונים להרחבה מלאה של המערכת בעסק שלכם:</p>
+    <ul class="roadmap">
+      <li><span class="plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span><div><b>מאגר לקוחות והיסטוריית הזמנות</b><span>זיהוי לקוח חוזר והמשך רציף מהזמנות קודמות.</span></div></li>
+      <li><span class="plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span><div><b>מחירים והנחות מותאמים ללקוח</b><span>מחיר קבוע או הנחה לפי לקוח — שאתם מגדירים.</span></div></li>
+      <li><span class="plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span><div><b>אינטגרציית וואטסאפ</b><span>מענה ועדכונים ישירות בוואטסאפ של הלקוח.</span></div></li>
+      <li><span class="plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span><div><b>סנכרון מלאי אמיתי</b><span>חיבור למערכת הקופה/מלאי לכמויות מדויקות.</span></div></li>
+      <li><span class="plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span><div><b>סליקה ותשלום</b><span>תשלום מאובטח ישירות בסיום ההזמנה.</span></div></li>
+      <li><span class="plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span><div><b>דוחות וסטטיסטיקות</b><span>כמה פניות והזמנות טופלו, מוצרים חמים, שעות שיא.</span></div></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="contact">
+      <h2>מוכנים לראות את זה עובד אצלכם?</h2>
+      <p>נחבר את הסוכן למערכת שלכם ונתאים אותו בדיוק לעסק.</p>
+      <div class="lines">
+        <a class="pill" href="tel:0503912491"><svg viewBox="0 0 24 24"><path d="M6 4h3l2 5-2 1a10 10 0 0 0 5 5l1-2 5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 4 6a2 2 0 0 1 2-2z"/></svg> 050-391-2491</a>
+        <a class="pill" href="mailto:agenthubguru@agenthub.guru"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3.5 7.5L12 13l8.5-5.5"/></svg> agenthubguru@agenthub.guru</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <footer>Agent Hub Guru · AI Engineering — run by O&amp;O &nbsp;|&nbsp; הדגמה עבור רשת עולם החי</footer>
+</div>
+</body>
+</html>
